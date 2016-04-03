@@ -1,0 +1,221 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[ddmmyyyy]{datetime}
+\usepackage{hyperref}
+\renewcommand{\dateseparator}{/}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\addto\captionspolish{\renewcommand{\figurename}{Rys.}}
+
+\pagestyle{fancy}
+\cfoot{\thepage\hspace{1pt}/\pageref{LastPage}}
+
+
+\begin{document}
+
+
+\begin{wrapfigure}{L}{20px}
+\includegraphics[width=1.5cm,height=1.3cm,keepaspectratio]{logo_ee.png}
+\end{wrapfigure}
+
+Politechnika Warszawska 
+\hfill KwiecieÒ  2016
+
+Wydzia≥ Elektryczny
+
+
+
+\quad
+\begin{center}
+\center \Huge Systemy czasu rzeczywistego
+\center \large Zastosowania systemÛw czasu rzeczywistego w wojskowoúci
+\vspace{0.5cm}\\
+\small Autor: Micha≥ Jereczek
+\end{center}
+
+\tableofcontents
+\pagebreak
+
+\section{Wprowadzenie}
+\subsection{Podstawowe pojÍcia}
+Aby mÛc rozpoczπÊ rozwaøania na temat zastosowania systemÛw czasu rzeczywistego w wojskowoúci
+niezbÍdnym jest wyjaúnienie podstawowych pojÍÊ oraz koncepcji zwiπzanych z tego typu systemami.
+\begin{enumerate}
+	\item System - W najogÛlniejszym znaczeniu tego zagadnienia, moøna powiedzieÊ, øe system
+    	  jest przyporzπdkowaniem pewnego zbioru wejúÊ do pewnego zbioru wyjúÊ. 
+    \item System czasu rzeczywistego - Jest to system, dla ktÛrego krytycznym zagadnieniem jest
+    	  czas. PoprawnoúÊ dzia≥ania takiego systemu jest úciúle zaleøna od poprawnego odebrania
+          danych wejúciowych w úciúle okreúlonych ramach czasowych. System czasu rzeczywistego powinien
+          zapewniÊ przewidywalne i moøliwie bezpieczne zachowanie wobec niepowodzeÒ.
+\end{enumerate}
+
+\subsubsection{Klasyfikacja}
+Systemy czasu rzeczywistego moøna klasyfikowaÊ ze wzglÍdu na skutki niezmieszczenia siÍ w ramach czasowych, ogÛlnie przyjÍto podzia≥ na trzy kategorie:
+\begin{enumerate}
+	\item System o ≥agodnych ograniczeniach czasowych (ang. soft) - Jest to system, w ktÛrym 			przegapienie nawet wielu ram czasowych nie skutkuje powaønymi konsekwencjami, co najwyøej
+    spadkiem wydajnoúci i frustracjπ uøytkownikÛw. W zastosowaniach militarnych szczegÛlnie waøne
+    sπ systemy komunikacji, gdzie podstawowπ funkcjonalnoúciπ nie jest jej jakoúÊ, lecz niezawodnoúÊ. 	  Przyk≥adem jest system audio-video, gdzie strata nawet ciπgu danych nie sprawia, øe cel (odebranie 	  i zrozumienie komunikatu) nie zostanie osiπgniÍty (przekaz straci tylko na jakoúci).
+    
+    \item System o mocnych ograniczeniach czasowych (ang. firm) - System, w ktÛrym przegapienie
+    ciπgu okien czasowych nie spowoduje awarii systemu, jednak spowodowane tym opÛünienie w 
+  	reakcji systemu moøe doprowadziÊ do katastrofy. Wojskowe systemy szybkiego reagowania potrzebujπ
+    predykcji zmian pogodowych, jest to niezwykle waøne, do poprawnego zaplanowania misji. Przyk≥adowy
+    system, ktÛry analizuje dane z stacji meteorologicznych w wyniku zbyt duøej iloúci informacji do
+    przetworzenia poprawnie przewidzi nastπpienie gwa≥townej burzy, jednak przez opÛünienia    	  	
+    informacja ta moøe zostaÊ podana zbyt pÛüno aby by≥a moøliwa odpowiednia reakcja.
+    
+    \item System o ostrych ograniczeniach czasowych (ang. hard) - Klasa systemu, gdzie nie zmieszczenie
+    siÍ w okreúlonych ramach czasowych nawet wobec jednej operacji jest katastrofalna w skutkach. Tego
+    typu systemy sπ szczegÛlnie waøne dla wojska. Przyk≥adem sπ wszelakiego rodzaju systemy 	   
+    kontrolujπce pociski rakietowe, gdzie nawet minimalne opÛünienie miÍdzy naciúniÍciem przycisku do 	  wystrza≥u, a samπ operacjπ wystrzelenia moøe doprowadziÊ do nie trafienia w cel.
+\end{enumerate}
+
+\section{Historia}
+\subsection{Projekt Whirlwind}
+Niepewnym jest gdzie i kiedy narodzi≥ siÍ termin \emph{systemÛw czasu rzeczywistego}, jednak
+prawdopodobne jest, øe pierwszy raz zosta≥ on uøyty w projekcie \emph{Whirlwind} (pl. Trπba Powietrzna)
+w 1947 roku. Whirlwind to komputer wykorzystujπcy lampy elektronowe, ktÛry mia≥ s≥uøyÊ do symulowania lotÛw dla za≥ogi samolotÛw bombowych. Jest to jeden z pierwszych komputerÛw, ktÛry umoøliwia≥ przetwarzanie rÛwnolegle w czasie rzeczywistym.
+
+\subsubsection{PamiÍÊ ferrytowa}
+Whirlwind zosta≥ opracowany w czasach zimnej wojny przez MIT dla marynarki wojennej StanÛw Zjednoczonych. Innowacyjnym w projekcie by≥o zastosowanie pamiÍci opartej o rdzeÒ ferrytowy, dziÍki czemu dostÍp do pamiÍci by≥ praktycznie natychmiastowy (prekursor wspÛ≥czesnych pamiÍci RAM).
+
+\subsubsection{Whirlwind assembler}
+W trakcie tworzenia tego projektu utworzony zosta≥ rÛwnieø specjalny jÍzyk programowania \emph{Whirlwind assembler}, ktÛry opisano jako \emph{algebraiczny kompilator do uproszczenia kodowania} (ang. algebraic compiler to simplify coding), by≥ to jeden z pierwszych jÍzykÛw wysokiego poziomu stworzony jeszcze na 10 lat przed Fortranem. 
+
+\begin{figure}[!ht]
+  \centering
+    \includegraphics[width=0.9\textwidth]{Whirlwind.JPG}
+  \caption{ZdjÍcie komputera Whirlwind I. Z lewej strony moøna zobaczyÊ pamiÍÊ ferrytowπ oraz 	 
+  		   stanowisko operatora. ØrÛd≥o: \url{https://en.wikipedia.org/wiki/Whirlwind_I}}
+\end{figure}
+
+\subsection{Projekt SAGE}
+W 1957 roku (10 lat po projekcie Whirlwind) swoje piÍtno w historii Si≥ Powietrznych Ameryki odcisnπ≥
+projekt SAGE: Semi-Automatic Ground Environment. Inøynierowie IBM w wspÛ≥pracy z MIT stworzyli olbrzymi
+system komputerÛw, ktÛrego zadaniem by≥o miÍdzy innymi koordynowanie i przetwarzanie danych przyjmowanych z wielu systemÛw radarowych. System ten w rezultacie by≥ w stanie przedstawiÊ wizualizacje ruchu powietrznego w badanych obszarach. 
+
+\subsubsection{Univac 1103A}
+Zadania wykonywane przez system SAGE nie by≥y by moøliwe bez uøycia nowoczesnych na tamte czasy komputerÛw IBM'u \emph{Univac Scientific 1103A}, ktÛre  obs≥ugiwa≥y przerwania asynchroniczne.
+Komputery potrzebne do pracy systemu zajmowa≥y specjalnie postawiony budynek o powierzchni 1.4 hektara.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.49\textwidth]{sage.jpg}
+    \includegraphics[width=0.49\textwidth]{univac.jpg}
+    \caption{Budynek w ktÛrym znajdowa≥ siÍ SAGE oraz komputer Univac. \newline èrÛd≥a: \newline
+    \url{https://en.wikipedia.org/wiki/Semi-Automatic_Ground_Environment} \newline
+    \url{https://en.wikipedia.org/wiki/UNIVAC_1103}}
+\end{figure}
+
+\section{RozwÛj jÍzykÛw programowania}
+RozwÛj systemÛw czasu rzeczywistego wymusi≥ potrzebÍ stworzenia nowych, wysokopoziomowych jÍzykÛw
+oprogramowania, ktÛre u≥atwi≥y by pracÍ inøynierom. U.S. Army w swoich systemach stosowa≥o g≥Ûwnie jÍzyk \emph{Fortran}, U.S. Navy natomiast \emph{CMS-2}, gdy w tym samym czasie Air Force wykorzystywa≥o
+\emph{JOVIAL}.
+
+Tak duøy podzia≥ wúrÛd tych jednostek doprowadzi≥ do tego, øe w latach siedemdziesiπtych
+Departament Obrony StanÛw zjednoczonych zleci≥ opracowanie jÍzyka Ada, ktÛry mia≥ byÊ standardowo stosowany przez nowe systemy tworzone na zlecenie 
+wyøej wymienionych jednostek. 
+
+\pagebreak
+\subsection{Fortran}
+Fortran(Formula Translator) jest najstarszym z jÍzykÛw wysokiego poziomu stosowanym wspÛ≥czeúnie w systemach czasu rzeczywistego. Stworzony przez IBM dominowa≥ na arenie programÛw s≥uøπcych do analizowania zmian pogodowych, analizach fizycznych i chemicznych oraz innych obszarach, gdzie priorytetowa by≥a wydajnoúÊ i responsywnoúÊ.
+\subsubsection{Wady}
+Fortran zosta≥ stworzony oko≥o roku 1955 i jego Ûwczesna wersja nie 
+wspiera≥a tak waønych dla systemÛw czasy rzeczywistego funkcji jak \emph{przerwania} i \emph{kolejkowanie zdarzeÒ}, dlatego musia≥ wspÛ≥pracowaÊ razem z duøymi porcjami kodu assemblera.
+JÍzyk ten nie posiada≥ rÛwnieø mechanizmÛw dynamicznego alokowania pamiÍci oraz rekurencji.
+\subsubsection{Zalety}
+Fortran pozwala≥ na pisanie konstrukcji typu if-then-else, co umoøliwia≥o pisanie na znacznie wyøszym poziomie abstrakcji niø dotychczas. JÍzyk ten powstawa≥ w czasach ma≥ych i wolnych systemÛw wbudowanych, co przyczyni≥o siÍ do zaprojektowania go w taki sposÛb, aby moøna w nim by≥o pisaÊ wydajne programy przy ma≥ej mocy obliczeniowej.
+\subsubsection{Przyk≥adowy program}
+Przyk≥adowy program, ktÛry losuje numer pomiÍdzy 0 a 1 i sprawdza czy mieúci siÍ w okreúlonych przedzia≥ach.
+\begin{verbatim}
+ program xif
+    implicit none
+    real :: x
+    real, parameter :: x1 = 0.3, x2 = 0.6
+    call random_seed()
+    call random_number(x)
+    if (x < x1) then
+       print*,x,"<",x1
+    else if (x < x2) then
+       print*,x,"<",x2
+    else
+       print*,x,">=",x2
+    end if
+ end program xif
+\end{verbatim}
+ørÛd≥o: \url{https://en.wikibooks.org/wiki/Fortran/Fortran_control}
+
+\pagebreak
+\subsection{CMS-2}
+CMS-2 (Compiler Monitor System 2) by≥ jÍzykiem stworzonym specjalnie na potrzeby U.S. Navy. Wydany oko≥o roku 1968 (ponad dekadÍ po Fortranie) stosowany jest w systemach wbudowanych.
+
+\subsubsection{Naval Tactical Data System}
+CMS-2 stosowany jest chociaøby w systemie NTDS (Naval Tactical Data System), ktÛry wspiera misje 
+bojowe do dnia dzisiejszego. System ten kolekcjonuje i procesuje waøne informacje aby 
+przedstawiÊ aktualnπ sytuacjÍ, dziÍki czemu dowÛdca si≥ zbrojnych moøe szybko 
+podejmowaÊ strategiczne decyzje. OkrÍty wojenne z systemem NTDS komunikujπ siÍ wzajemnie,
+co pozwala na zbudowanie szczegÛ≥owej mapy taktycznej.
+
+\begin{figure}[!ht]
+  \centering
+    \includegraphics[width=1.0\textwidth]{NTDS.jpg}
+  \caption{ZdjÍcie przedstawiajπce testy systemu NTDS w zainscenizowanym pok≥adowym pomieszczeniu operacyjnym CIC (Combat Information Center). \newline ØrÛd≥o: \url{https://en.wikipedia.org/wiki/Naval_Tactical_Data_System}}
+\end{figure}
+
+\pagebreak
+
+\begin{thebibliography}{9}
+
+\bibitem{Laplante04}
+  Phillip A. Laplante,
+  \emph{Real-time systems design and analysis}.
+  IEEE PRESS, Third Edition, 2004.
+
+\bibitem{trybus11}
+  Praca zbiorowa pod redakcjπ Leszka Trybusa i S≥awomira Samoleja,
+  \emph{Projektowanie, analiza i implementacja systemÛw czasu rzeczywistego}.
+  Wydawnictwo Komunikacji i £πcznoúci, Warszawa, 2011.
+  
+\bibitem{trybus11}
+  Antoni M. Donigiewicz, Krzysztof £uczak, Wojciech Sa≥ata, Andrzej Stasiak, 
+  \emph{Systemy czasu rzeczywistego '99 : Zastosowania Wojskowe}.
+  Oficyna Wydawnicza Politechniki Wroc≥awskiej, Wroc≥aw, 1999.
+  
+\bibitem{wiki1}
+  \url{https://pl.wikipedia.org/wiki/System_czasu_rzeczywistego}
+  
+\bibitem{wiki2}
+  \url{https://en.wikipedia.org/wiki/Whirlwind_I}
+  
+\bibitem{wiki3}
+  \url{http://ethw.org/Magnetic-Core_Memory}
+  
+\bibitem{wiki4}
+  \url{https://en.wikipedia.org/wiki/Semi-Automatic_Ground_Environment}
+  
+\bibitem{wiki5}
+  \url{https://en.wikipedia.org/wiki/UNIVAC_1103}
+  
+\bibitem{wiki6}
+  \url{https://en.wikipedia.org/wiki/CMS-2_(programming_language)}
+  
+\bibitem{wiki7}
+  \url{http://www.thefreedictionary.com/naval+tactical+data+system}
+  
+\bibitem{wiki8}
+  \url{http://mil-embedded.com/articles/ntds-navy-platforms-worldwide/}
+  
+\bibitem{wiki9}
+  \url{https://en.wikipedia.org/wiki/Naval_Tactical_Data_System}
+
+\end{thebibliography}
+
+\end{document}
