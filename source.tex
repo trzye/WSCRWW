@@ -3,7 +3,7 @@
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=1.2in]{geometry}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{fancyhdr}
@@ -11,6 +11,8 @@
 \usepackage[ddmmyyyy]{datetime}
 \usepackage{hyperref}
 \usepackage{dirtytalk}
+\renewcommand{\baselinestretch}{1.3} 
+\usepackage[nottoc,notlot,notlof]{tocbibind}
 
 \renewcommand{\dateseparator}{/}
 \fancyhead{}
@@ -43,6 +45,7 @@ Wydzia³ Elektryczny
 \small Autor: Micha³ Jereczek
 \end{center}
 
+\pagebreak
 \tableofcontents
 \pagebreak
 
@@ -92,9 +95,11 @@ Whirlwind zosta³ opracowany w czasach zimnej wojny przez MIT dla marynarki wojen
 \subsubsection{Whirlwind assembler}
 W trakcie tworzenia tego projektu utworzony zosta³ równie¿ specjalny jêzyk programowania \emph{Whirlwind assembler}, który opisano jako \emph{algebraiczny kompilator do uproszczenia kodowania} (ang. algebraic compiler to simplify coding), by³ to jeden z pierwszych jêzyków wysokiego poziomu stworzony jeszcze na 10 lat przed Fortranem. 
 
+\pagebreak
+
 \begin{figure}[!ht]
   \centering
-    \includegraphics[width=0.9\textwidth]{Whirlwind.JPG}
+    \includegraphics[width=1\textwidth]{Whirlwind.JPG}
   \caption{Zdjêcie komputera Whirlwind I. Z lewej strony mo¿na zobaczyæ pamiêæ ferrytow¹ oraz 	 
   		   stanowisko operatora. ¯ród³o: \url{https://en.wikipedia.org/wiki/Whirlwind_I}}
 \end{figure}
@@ -117,7 +122,9 @@ Komputery potrzebne do pracy systemu zajmowa³y specjalnie postawiony budynek o p
     \url{https://en.wikipedia.org/wiki/UNIVAC_1103}}
 \end{figure}
 
-\section{Rozwój jêzyków programowania}
+%\pagebreak
+
+\section{Zastosowania, a jêzyki oprogramowania}
 Rozwój systemów czasu rzeczywistego wymusi³ potrzebê stworzenia nowych, wysokopoziomowych jêzyków
 oprogramowania, które u³atwi³y by pracê in¿ynierom. U.S. Army w swoich systemach stosowa³o g³ównie jêzyk \emph{Fortran}, U.S. Navy natomiast \emph{CMS-2}, gdy w tym samym czasie Air Force wykorzystywa³o
 \emph{JOVIAL}.
@@ -126,17 +133,16 @@ Tak du¿y podzia³ wœród tych jednostek doprowadzi³ do tego, ¿e w latach siedemdzi
 Departament Obrony Stanów zjednoczonych zleci³ opracowanie jêzyka Ada, który mia³ byæ standardowo stosowany przez nowe systemy tworzone na zlecenie 
 wy¿ej wymienionych jednostek. 
 
-\pagebreak
 \subsection{Fortran}
-Fortran(Formula Translator) jest najstarszym z jêzyków wysokiego poziomu stosowanym wspó³czeœnie w systemach czasu rzeczywistego. Stworzony przez IBM dominowa³ na arenie programów s³u¿¹cych do analizowania zmian pogodowych, analizach fizycznych i chemicznych oraz innych obszarach, gdzie priorytetowa by³a wydajnoœæ i responsywnoœæ.
+Fortran(Formula Translator) jest najstarszym z jêzyków wysokiego poziomu stosowanym wspó³czeœnie w systemach czasu rzeczywistego. Stworzony przez IBM dominowa³ na arenie programów s³u¿¹cych do analizowania zmian pogodowych, analiz fizycznych i chemicznych oraz innych obszarów, gdzie priorytetowa by³a wydajnoœæ i responsywnoœæ.
 \subsubsection{Wady}
 Fortran zosta³ stworzony oko³o roku 1955 i jego ówczesna wersja nie 
-wspiera³a tak wa¿nych dla systemów czasy rzeczywistego funkcji jak \emph{przerwania} i \emph{kolejkowanie zdarzeñ}, dlatego musia³ wspó³pracowaæ razem z du¿ymi porcjami kodu assemblera.
+wspiera³a tak wa¿nych dla systemów czasu rzeczywistego funkcji jak \emph{przerwania} i \emph{kolejkowanie zdarzeñ}, dlatego musia³ wspó³pracowaæ razem z du¿ymi porcjami kodu assemblera.
 Jêzyk ten nie posiada³ równie¿ mechanizmów dynamicznego alokowania pamiêci oraz rekurencji.
 \subsubsection{Zalety}
 Fortran pozwala³ na pisanie konstrukcji typu if-then-else, co umo¿liwia³o pisanie na znacznie wy¿szym poziomie abstrakcji ni¿ dotychczas. Jêzyk ten powstawa³ w czasach ma³ych i wolnych systemów wbudowanych, co przyczyni³o siê do zaprojektowania go w taki sposób, aby mo¿na w nim by³o pisaæ wydajne programy przy ma³ej mocy obliczeniowej.
 \subsubsection{Przyk³adowy program}
-Przyk³adowy program, który losuje numer pomiêdzy 0 a 1 i sprawdza czy mieœci siê w okreœlonych przedzia³ach.
+Przyk³adowy program, który losuje numer pomiêdzy 0, a 1 i sprawdza czy mieœci siê w okreœlonych przedzia³ach.
 \begin{verbatim}
  program xif
     implicit none
@@ -155,7 +161,6 @@ Przyk³adowy program, który losuje numer pomiêdzy 0 a 1 i sprawdza czy mieœci siê
 \end{verbatim}
 ¿ród³o: \url{https://en.wikibooks.org/wiki/Fortran/Fortran_control}
 
-\pagebreak
 \subsection{CMS-2}
 CMS-2 (Compiler Monitor System 2) by³ jêzykiem stworzonym specjalnie na potrzeby U.S. Navy. Wydany oko³o roku 1968 (ponad dekadê po Fortranie) stosowany jest w systemach wbudowanych.
 
@@ -170,11 +175,10 @@ co pozwala na zbudowanie szczegó³owej mapy taktycznej.
 
 \begin{figure}[!ht]
   \centering
-    \includegraphics[width=1.0\textwidth]{NTDS.jpg}
+    \includegraphics[width=1\textwidth]{NTDS.jpg}
   \caption{Zdjêcie przedstawiaj¹ce testy systemu NTDS w zainscenizowanym pok³adowym pomieszczeniu operacyjnym CIC (Combat Information Center). \newline ¯ród³o: \url{https://en.wikipedia.org/wiki/Naval_Tactical_Data_System}}
 \end{figure}
 
-\pagebreak
 
 \subsection{JOVIAL}
 	JOVIAL (Jules Own Version of the International Algorithmic Language) by³ wysokopoziomowym jêzykiem zaprojektowanym przez Julesa Schwartz na potrzeby militarne Stanów Zjednoczonych Ameryki.
@@ -186,15 +190,19 @@ co pozwala na zbudowanie szczegó³owej mapy taktycznej.
     
     Stworzenie systemu poch³onê³o 2 lata, w tym 1400 programistycznych lat, ponad dwukrotnie mniej ni¿ w porównywalnym w skali projekcie SAGE. Tak du¿e przyspieszenie zdo³ano uzyskaæ dziêki nowoczesnemu (na te czasy) jêzykowi.  SAGE by³ programowany w unowoczeœnionej odmianie Whirlwind Assemblera, która nie pozwala³a na tak wysoki poziom abstrakcji jak JOVIAL.
 
-\vspace{0.3cm}
-
-\begin{wrapfigure}{l}{0.6\textwidth}
+\begin{figure}[!ht]
   \centering
-    \includegraphics[width=0.6\textwidth]{SACCS.jpg}
+    \includegraphics[width=1.0\textwidth]{SACCS.jpg}
   \caption{Centrala kontrolna wyrzutni rakietowych. Ÿród³o: \url{http://fas.org/nuke/guide/usa/c3i/cvpmrjan/sld013.htm}}
-\end{wrapfigure}
+\end{figure}
 
-    System SACCS zapewnia³ komunikacjê miêdzy wa¿nymi strukturami Departamentu Obrony Narodowej USA takimi jak: centrale kontrolne wyrzutni rakietowych,  strategiczne centra komunikacji, systemy komunikacji lotniczej, jednostki nuklearne. Innowacyjnym w systemie by³o zapewnienie  bezpiecznej i dwukierunkowej (full-duplex) komunikacji sieciowej.
+% \begin{wrapfigure}{l}{0.62\textwidth}
+%   \centering
+%     \includegraphics[width=0.55\textwidth]{SACCS.jpg}
+%   \caption{Centrala kontrolna wyrzutni rakietowych. Ÿród³o: \url{http://fas.org/nuke/guide/usa/c3i/cvpmrjan/sld013.htm}}
+% \end{wrapfigure}
+
+    System SACCS zapewnia³ komunikacjê miêdzy wa¿nymi strukturami Departamentu Obrony Narodowej takimi jak: centrale kontrolne wyrzutni rakietowych,  strategiczne centra komunikacji, systemy komunikacji lotniczej, jednostki nuklearne. Innowacyjnym w systemie by³o zapewnienie  bezpiecznej i dwukierunkowej (full-duplex) komunikacji sieciowej.
 
 
     Natura SACCS jako systemu czasu rzeczywistego przejawia³a siê na froncie. Dowódcy si³ zbrojnych za poœrednictwem systemu mogli otrzymywaæ i wydawaæ krytyczne komunikaty, system by³ w stanie przekazywaæ aktualne dane z interfejsów: DPS (Subsystemu przetwarzania danych), AFGWC (Globalnego centrum zmian pogodowych U.S. Airforce), AFSATCOM (System satelitarny U.S. Airforce) oraz 616A (System niezawodnej komunikacji niskich czêstotliwoœci).
@@ -204,7 +212,7 @@ co pozwala na zbudowanie szczegó³owej mapy taktycznej.
 \subsection{Ada}
 	Jêzyk Ada zosta³ opracowany na prze³omie lat osiemdziesi¹tych aby ostatecznie byæ wydanym w 1983 roku. G³ównym celem, który przyœwieca³ jego realizacji by³a minimalizacja kosztów zwi¹zanych z utrzymaniem systemów stworzonych na potrzeby militarne Stanów Zjednoczonych oraz zapewnienie jêzyka, który pozwoli³by pisaæ kod na bardzo wysokim poziomie abstrakcji, kod czytelny w odbiorze. Jêzyk mia³ s³u¿yæ do programowania olbrzymich systemów wbudowanych, które wymaga³yby mechanizmów zwi¹zanych z przetwarzaniem w czasie rzeczywistym.
 \subsubsection{Zalety}
-Ada posiada³ szereg cech, które ze wzglêdu na krytycznych charakter systemów, dla których by³ przeznaczony. Do najwa¿niejszych cech nale¿¹:
+Ada posiada³ szereg cech, które ze wzglêdu na krytycznych charakter systemów, dla których by³ przeznaczony s¹ bardzo istotne. Do najwa¿niejszych z nich nale¿¹:
 \begin{itemize}
 \item Programowanie generyczne - pisanie kodu abstrahuj¹cego od typu danych.
 \item Mechanizm wyj¹tków - umo¿liwienie bardzo szczegó³owej obs³ugi b³êdów.
@@ -226,34 +234,59 @@ W 1987 roku Departament Obrony Stanów Zjednoczonych wyda³ oficjalne instrukcje:
 
 \vspace{0.2cm}
 
-\say{\emph{Jêzyk programowania Ada powinien byæ jedynym, powszechnie stosowanym jêzykiem programowania dla zasobów komputerowych Obrony(USA) wykorzystywanych w inteligentnych systemach do komunikacji i kontroli si³ zbrojnych, lub jako integralna czêœæ systemów zbrojeniowych.}} \tiny- T³umaczenie z Ÿród³a: \url{http://cs.stanford.edu/people/eroberts/cs201/projects/critical-systems/military.htm}
+\say{\emph{Jêzyk programowania Ada powinien byæ jedynym, powszechnie stosowanym jêzykiem programowania dla zasobów komputerowych Obrony(USA) wykorzystywanych w inteligentnych systemach do komunikacji i kontroli si³ zbrojnych, lub jako integralna czêœæ systemów zbrojeniowych.}} \newline \scriptsize T³umaczenie cytatu z Ÿród³a: \newline \url{http://cs.stanford.edu/people/eroberts/cs201/projects/critical-systems/military.htm}
 
 \normalsize
 \vspace{0.2cm}
 Instrukcje te utrzymywa³y siê w mocy przez dekadê, dopóty w roku 1997 zosta³y wycofane w zwi¹zku z badaniami przeprowadzonymi przez Radê Badawcz¹ Narodowej Akademii Nauk. G³ównym powodem by³y problemy z ma³¹ popularnoœci¹ jêzyka, gdy¿ ten by³ stosowany w g³ównej mierze w Systemach Departamentu Obrony. Jêzyka Ada nie uczono w szko³ach, a dostêp do narzêdzi i kompilatorów by³ ograniczony. 
 
-\subsubsection{Systemy czasu rzeczywistego}
+\subsubsection{Przyk³ady systemów}
 Wiele krytycznych systemów zosta³o opartym na tym jêzyku, wiele z nich funkcjonuje do dzisiaj. Poni¿ej prezentujê najciekawsze z wybranych:
 
+\begin{enumerate}
+\item \textbf{CMWS (Common Missile Warning System)}
+
+System s³u¿¹cy do wykrywania zbli¿aj¹cych siê pocisków. CMWS stosowany jest w œmig³owcach, szybowcach oraz samolotach nale¿¹cych do U.S. Army, charakteryzuje siê ekstremalnie nisk¹ czêstotliwoœci¹ fa³szywych alarmów oraz ³atwoœci¹ adaptacji. 
+
+Zestaw sk³adaj¹cy siê na system zawiera piêæ sensorów o wymiarach 8x8x10cm i wadze 1kg ka¿dy oraz jedn¹ jednostkê steruj¹c¹ o wymiarach 12x25x33cm i wadze 8 kilogramów. Jednostka steruj¹ca na podstawie danych z sensorów w momencie wykrycia nadchodz¹cego pocisku komunikuje siê z systemem pok³adowym pilota b¹dŸ za³ogi. Nale¿y zwróciæ uwagê na olbrzymi¹ niezawodnoœæ systemu, ten od 2006 roku sprawdzi³ siê w ponad milionie godzin lotów w misjach wojennych ³¹cznie dla ponad 2000 maszyn, na które zosta³ dostarczony.
+
+
+\begin{figure}[!ht]
+  \centering
+    \includegraphics[width=1.0\textwidth]{CMWS.png}
+  \caption{Zdjêcie przedstawiaj¹ce osprzêt SMWS. ¯ród³o: \url{http://www.baesystems.com/en/product/anaar57-common-missile-warning-system-cmws}}
+\end{figure}
+
+\pagebreak
+
+\item \textbf{TSS (The Boeing Company’s Training Systems \& Services)}
+
+\emph{AdaCore} (firma zajmuj¹ca siê dostarczaniem komercyjnych rozwi¹zañ dla systemów pisanych w jêzyku Ada) uczestniczy w projektach zwi¹zanych z symulacj¹ lotów w czasie rzeczywistym. Z wykorzystaniem Ada napisane zosta³y symulatory dla amerykañskich maszyn takich jak: Boeing C-17, Boeing AH-64D Apache Longbow,Boeing F-15E.
+
+\item \textbf{SSDS (Ship Self-Defense System)}
+
+Rozwi¹zania firmy \emph{AdaCore} wykorzystane zosta³y równie¿ w systemie obronnym okrêtów wojennych opracowanym dla U.S. Navy. Jêzyk Ada zosta³ u¿yty w projekcie w integracji z C i C++, zaprogramowane zosta³y maszyny z procesorami Intela i Systemem LynxOS x86 (LynxOS jest systemem operacyjnym specjalnie zaprojektowanym do celów przetwarzania w czasie rzeczywistym). 
+
+SSDS integruje sygna³y dostarczane przez systemy ró¿nego rodzaju detekcji takie jak na przyk³ad ESM (System radarowy), IFF (System identyfikuj¹cy czy wykryta jednostka jest przyjacielem lub wrogiem) i opracowuje plan dzia³ania, który (zale¿nie od ustawieñ automatyzacji) mo¿e byæ wys³any do operatorów aby Ci podjêli dzia³ania lub automatycznie wykona mo¿liwe czynnoœci (wystrzeli pocisk w stronê wroga).
+
+
+\end{enumerate}
+
+\subsubsection{Wnioski}
+Jêzyk Ada w swojej nowoczesnej ods³onie (Ada 95) stosowany jest powszechnie w systemach czasu rzeczywistego mimo, ¿e
+nie jest tak popularny jak inne jêzyki takie jak C, C++, Java, które daj¹ podobne mo¿liwoœci. Spowodowane jest to tym, ¿e jêzyk ten od pocz¹tku projektowany by³ z myœl¹ o krytycznych systemach, dziêki czemu ryzyko pope³nienia dotkliwych b³êdów jest mocno ograniczone. 
+
+O sukcesie Ada œwiadczy równie¿ szerokie jego wykorzystanie nie tylko w systemach armii amerykañskiej, ale równie¿ kanadyjskiej, australijskiej, szwedzkiej, brytyjskiej i innych.
 
 
 \pagebreak
+
 \begin{thebibliography}{9}
 
 \bibitem{Laplante04}
   Phillip A. Laplante,
   \emph{Real-time systems design and analysis}.
   IEEE PRESS, Third Edition, 2004.
-
-\bibitem{trybus11}
-  Praca zbiorowa pod redakcj¹ Leszka Trybusa i S³awomira Samoleja,
-  \emph{Projektowanie, analiza i implementacja systemów czasu rzeczywistego}.
-  Wydawnictwo Komunikacji i £¹cznoœci, Warszawa, 2011.
-  
-\bibitem{trybus11}
-  Antoni M. Donigiewicz, Krzysztof £uczak, Wojciech Sa³ata, Andrzej Stasiak, 
-  \emph{Systemy czasu rzeczywistego '99 : Zastosowania Wojskowe}.
-  Oficyna Wydawnicza Politechniki Wroc³awskiej, Wroc³aw, 1999.
   
 \bibitem{wiki1}
   \url{https://pl.wikipedia.org/wiki/System_czasu_rzeczywistego}
@@ -297,6 +330,17 @@ Wiele krytycznych systemów zosta³o opartym na tym jêzyku, wiele z nich funkcjonu
 
 \bibitem{wiki12}
 \url{http://www.seas.gwu.edu/~mfeldman/ada-project-summary.html#Military_Applications_}
+
+\scriptsize
+
+\bibitem{wiki13}
+\url{http://www.baesystems.com/en/product/anaar57-common-missile-warning-system-cmws}
+
+\bibitem{wiki14}
+\url{http://www.adacore.com/press/gnat-pro-development-environment-to-support-boeinge28099s-real-time-simulat/}
+
+\bibitem{wiki15}
+\url{http://www.adacore.com/press/gnat-pro-provides-multi-language-support-aboard-raytheons-ssds}
 
 \end{thebibliography}
 
