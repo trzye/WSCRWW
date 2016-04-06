@@ -10,6 +10,8 @@
 \usepackage{lastpage}
 \usepackage[ddmmyyyy]{datetime}
 \usepackage{hyperref}
+\usepackage{dirtytalk}
+
 \renewcommand{\dateseparator}{/}
 \fancyhead{}
 \renewcommand{\headrulewidth}{0pt}
@@ -159,7 +161,9 @@ CMS-2 (Compiler Monitor System 2) by³ jêzykiem stworzonym specjalnie na potrzeby
 
 \subsubsection{Naval Tactical Data System}
 CMS-2 stosowany jest chocia¿by w systemie NTDS (Naval Tactical Data System), który wspiera misje 
-bojowe do dnia dzisiejszego. System ten kolekcjonuje i procesuje wa¿ne informacje aby 
+bojowe do dnia dzisiejszego. 
+
+System ten kolekcjonuje i procesuje wa¿ne informacje aby 
 przedstawiæ aktualn¹ sytuacjê, dziêki czemu dowódca si³ zbrojnych mo¿e szybko 
 podejmowaæ strategiczne decyzje. Okrêty wojenne z systemem NTDS komunikuj¹ siê wzajemnie,
 co pozwala na zbudowanie szczegó³owej mapy taktycznej.
@@ -172,6 +176,68 @@ co pozwala na zbudowanie szczegó³owej mapy taktycznej.
 
 \pagebreak
 
+\subsection{JOVIAL}
+	JOVIAL (Jules Own Version of the International Algorithmic Language) by³ wysokopoziomowym jêzykiem zaprojektowanym przez Julesa Schwartz na potrzeby militarne Stanów Zjednoczonych Ameryki.
+    
+    Jêzyk powsta³y w 1959 roku i by³ odpowiedzi¹ na brak alternatyw dla programowania systemów wbudowanych czasu rzeczywistego. US Air Force stosuje go do dnia dzisiejszego w celu programowania urz¹dzeñ z procesorami 1750A.
+    
+\subsubsection{SACCS}
+	SACCS (Strategic Automated Command Control System), potê¿ny system do wymiany krytycznych komunikatów poprzez sieæ, zosta³ w 95\% napisany w jêzyku JOVIAL.
+    
+    Stworzenie systemu poch³onê³o 2 lata, w tym 1400 programistycznych lat, ponad dwukrotnie mniej ni¿ w porównywalnym w skali projekcie SAGE. Tak du¿e przyspieszenie zdo³ano uzyskaæ dziêki nowoczesnemu (na te czasy) jêzykowi.  SAGE by³ programowany w unowoczeœnionej odmianie Whirlwind Assemblera, która nie pozwala³a na tak wysoki poziom abstrakcji jak JOVIAL.
+
+\vspace{0.3cm}
+
+\begin{wrapfigure}{l}{0.6\textwidth}
+  \centering
+    \includegraphics[width=0.6\textwidth]{SACCS.jpg}
+  \caption{Centrala kontrolna wyrzutni rakietowych. Ÿród³o: \url{http://fas.org/nuke/guide/usa/c3i/cvpmrjan/sld013.htm}}
+\end{wrapfigure}
+
+    System SACCS zapewnia³ komunikacjê miêdzy wa¿nymi strukturami Departamentu Obrony Narodowej USA takimi jak: centrale kontrolne wyrzutni rakietowych,  strategiczne centra komunikacji, systemy komunikacji lotniczej, jednostki nuklearne. Innowacyjnym w systemie by³o zapewnienie  bezpiecznej i dwukierunkowej (full-duplex) komunikacji sieciowej.
+
+
+    Natura SACCS jako systemu czasu rzeczywistego przejawia³a siê na froncie. Dowódcy si³ zbrojnych za poœrednictwem systemu mogli otrzymywaæ i wydawaæ krytyczne komunikaty, system by³ w stanie przekazywaæ aktualne dane z interfejsów: DPS (Subsystemu przetwarzania danych), AFGWC (Globalnego centrum zmian pogodowych U.S. Airforce), AFSATCOM (System satelitarny U.S. Airforce) oraz 616A (System niezawodnej komunikacji niskich czêstotliwoœci).
+    
+    System gwarantowa³ odebranie strategicznych komunikatów w ci¹gu 15 sekund, co w latach osiemdziesi¹tych by³o olbrzymim sukcesem, trzeba pamiêtaæ, ¿e komunikacja by³a dodatkowo szyfrowana, co znacznie spowalnia³o czas reakcji.
+
+\subsection{Ada}
+	Jêzyk Ada zosta³ opracowany na prze³omie lat osiemdziesi¹tych aby ostatecznie byæ wydanym w 1983 roku. G³ównym celem, który przyœwieca³ jego realizacji by³a minimalizacja kosztów zwi¹zanych z utrzymaniem systemów stworzonych na potrzeby militarne Stanów Zjednoczonych oraz zapewnienie jêzyka, który pozwoli³by pisaæ kod na bardzo wysokim poziomie abstrakcji, kod czytelny w odbiorze. Jêzyk mia³ s³u¿yæ do programowania olbrzymich systemów wbudowanych, które wymaga³yby mechanizmów zwi¹zanych z przetwarzaniem w czasie rzeczywistym.
+\subsubsection{Zalety}
+Ada posiada³ szereg cech, które ze wzglêdu na krytycznych charakter systemów, dla których by³ przeznaczony. Do najwa¿niejszych cech nale¿¹:
+\begin{itemize}
+\item Programowanie generyczne - pisanie kodu abstrahuj¹cego od typu danych.
+\item Mechanizm wyj¹tków - umo¿liwienie bardzo szczegó³owej obs³ugi b³êdów.
+\item Instrukcja wyboru (ang. Switch statement) - zast¹pienie wielopoziomowych instrukcji typu \emph{je¿eli-to} czytelniejsz¹ konstrukcj¹.
+\item Typowanie silne - Zapewnia b³êdy kompilacji w przypadku u¿ycia z³ego typu danych dla okreœlonych operacji, dziêki czemu mo¿na za¿egnaæ nieprzewidywalnym zachowaniom systemu.
+\item Obliczenia równoleg³e - Ada wspiera technikê SIMD(Jedna instrukcja - Wiele danych) oraz MIMD(Wiele instrukcji - Wiele danych) z wykorzystaniem pamiêci wspó³dzielonej.
+
+
+
+\end{itemize}
+
+\subsubsection{Wady}
+Ada nie wspiera³a paradygmatu obiektowego, ten zosta³ dodany dopiero w 1995 wraz z now¹ wersj¹ nazwan¹ \emph{Ada 95}, wraz z aktualizacj¹ dodano ulepszone wsparcie dla obliczeñ numerycznych oraz finansowych. \emph{Ada 95} nie jest wstecznie kompatybilna z wczeœniejszymi wersjami.
+
+\subsubsection{Historia}
+Od 1983 roku Ada sta³a siê bardzo popularnym jêzykiem wykorzystywanym nie tylko w sektorze militarnym, ale równie¿ w komercyjnych systemach bankowych lub lotniczych. 
+
+W 1987 roku Departament Obrony Stanów Zjednoczonych wyda³ oficjalne instrukcje: 
+
+\vspace{0.2cm}
+
+\say{\emph{Jêzyk programowania Ada powinien byæ jedynym, powszechnie stosowanym jêzykiem programowania dla zasobów komputerowych Obrony(USA) wykorzystywanych w inteligentnych systemach do komunikacji i kontroli si³ zbrojnych, lub jako integralna czêœæ systemów zbrojeniowych.}} \tiny- T³umaczenie z Ÿród³a: \url{http://cs.stanford.edu/people/eroberts/cs201/projects/critical-systems/military.htm}
+
+\normalsize
+\vspace{0.2cm}
+Instrukcje te utrzymywa³y siê w mocy przez dekadê, dopóty w roku 1997 zosta³y wycofane w zwi¹zku z badaniami przeprowadzonymi przez Radê Badawcz¹ Narodowej Akademii Nauk. G³ównym powodem by³y problemy z ma³¹ popularnoœci¹ jêzyka, gdy¿ ten by³ stosowany w g³ównej mierze w Systemach Departamentu Obrony. Jêzyka Ada nie uczono w szko³ach, a dostêp do narzêdzi i kompilatorów by³ ograniczony. 
+
+\subsubsection{Systemy czasu rzeczywistego}
+Wiele krytycznych systemów zosta³o opartym na tym jêzyku, wiele z nich funkcjonuje do dzisiaj. Poni¿ej prezentujê najciekawsze z wybranych:
+
+
+
+\pagebreak
 \begin{thebibliography}{9}
 
 \bibitem{Laplante04}
@@ -215,6 +281,22 @@ co pozwala na zbudowanie szczegó³owej mapy taktycznej.
   
 \bibitem{wiki9}
   \url{https://en.wikipedia.org/wiki/Naval_Tactical_Data_System}
+  
+\bibitem{progo}
+  \url{http://progopedia.com/implementation/jovial/}
+  
+\bibitem{SACSS}
+   \url{http://fas.org/nuke/guide/usa/c3i/saccs.htm}
+
+\bibitem{wiki10}
+\url{http://www.ibspan.waw.pl/~paprzyck/mp/cvr/research/varia_papers/ADA_para_97.pdf}
+
+
+\bibitem{wiki11}
+\url{http://cs.stanford.edu/people/eroberts/cs201/projects/critical-systems/military.htm}
+
+\bibitem{wiki12}
+\url{http://www.seas.gwu.edu/~mfeldman/ada-project-summary.html#Military_Applications_}
 
 \end{thebibliography}
 
